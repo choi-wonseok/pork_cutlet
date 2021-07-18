@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>회원 가입</title>
+<title><%= title %></title>
 <link rel="stylesheet" type="text/css" href="css/sign_up_style.css">
 </head>
 
 <body>
-    <h1>회원가입</h1>
-<form>
+    <h1><%= title %></h1>
+<form action="/signup" method="post" class="signupForm">
 <fieldset>
 <h2>Login information</h2>
 <ol>
@@ -15,15 +15,17 @@
     <input id="userid" name="userid" type="text" placeholder="아이디" equired autofocus>
   </li>
   <li>
-    <input id="pwd1" name="pwd1" type="password" placeholder="비밀번호" required>
+    <input id="password" name="password" type="password" placeholder="비밀번호" required>
   </li>
-  <li>
-    <input id="pwd2" name="pwd2" type="password" placeholder="비밀번호 확인" required>
-  </li>  
+  <!--
+    <li>
+      <input id="pwd2" name="pwd2" type="password" placeholder="비밀번호 확인" required>
+    </li>  
+  -->
 </ol>
 </fieldset>
 <fieldset>
-<h2>Persoan information</h2>
+<h2>Personal information</h2>
 <ol>
   <li>
     <input id="fullname" name="fullname" type="text" placeholder="이름" required>

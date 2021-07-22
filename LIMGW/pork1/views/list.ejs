@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1><%= title %></h1>
+<a href="/create">글쓰기</a>
+<table border="1">
+    <tr>
+        <td>bbs_no</td>
+        <td>post_no</td>
+        <td>post_title</td>
+        <td>date</td>
+    </tr>
+    <%
+    for(var i=0; i<rows.length; i++)
+    {
+        var data = rows[i];
+    %>
+    <tr>
+        <td><%=data.BBS_NO%></td>
+        <td><%=data.POST_NO%></td>
+        <td><a href="/show"><%=data.POST_TITLE%></a></td>
+        <td><%=data.WRT_DTT%></td>
+    </tr>
+    <%}%>
+</table>
+</body>
+</html>

@@ -8,7 +8,7 @@ const listPath = path.resolve(__dirname, "..", "utils", "dbConnection");
 const dbConnection = require(listPath);
 
 // Home Page
-exports.homePage = async (req, res, next) => {
+exports.homePage = async (req, res) => {
   const sql = mysql.format("SELECT * FROM `uni_login` WHERE `login_id`=?", [
     req.signedCookies.userID,
   ]);
@@ -50,6 +50,7 @@ exports.register = async (req, res) => {
       let errResult;
       let errMsg = err.sqlMessage.split("'");
       let errField = errMsg[errMsg.length - 2];
+
       if (errField == "uni_login.PRIMARY") {
         errResult = "이미 존재하는 ID입니다.";
       } else if (errField == "uni_login.EMAIL") {
@@ -59,10 +60,11 @@ exports.register = async (req, res) => {
       } else errResult = err.sqlMessage;
 
       req.session.msg = errResult;
+      res.redirect("back");
     } else {
       if (result) req.session.msg = "회원가입 완료.";
+      res.redirect("account");
     }
-    res.redirect("account");
   });
 };
 
@@ -115,6 +117,30 @@ exports.register = async (req, res) => {
 // exports.loginPage = (req, res) => {
 //   res.render("account");
 // };
+
+// var passport = require("passport"),
+//   LocalStrategy = require("passport-local").Strategy;
+// passport.use(
+//   new LocalStrategy(
+//     {
+//       usernameField: "userID",
+//       passwordField: "password",
+//     },
+//     function (username, password, done) {
+//       console.log("LocalStrategy", username, password);
+//       /*User.findOne({ username: username }, function (err, user) {
+//         if (err) { return done(err); }
+//         if (!user) {
+//           return done(null, false, { message: 'Incorrect username.' });
+//         }
+//         if (!user.validPassword(password)) {
+//           return done(null, false, { message: 'Incorrect password.' });
+//         }
+//         return done(null, user);
+//       });*/
+//     }
+//   )
+// );
 
 // Login User
 exports.login = async (req, res) => {

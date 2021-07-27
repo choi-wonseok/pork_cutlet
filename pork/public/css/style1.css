@@ -1,87 +1,208 @@
-*{
+/* * {
   margin: 0px;
   padding: 0px;
   text-decoration: none;
-  font-family:sans-serif;
-
+  font-family: sans-serif;
 }
-
 body {
   background-color: #34495e;
 }
-
 .loginForm {
-  position:absolute;
-  width:300px;
-  height:400px;
+  position: absolute;
+  width: 300px;
+  height: 400px;
   padding: 30px, 20px;
-  background-color:#FFFFFF;
-  text-align:center;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  background-color: #ffffff;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 15px;
 }
-
-.loginForm h2{
+.loginForm h2 {
   text-align: center;
   margin: 30px;
 }
-
-.idForm{
+.idForm {
   border-bottom: 2px solid #adadad;
   margin: 30px;
   padding: 10px 10px;
 }
-
-.passForm{
+.passForm {
   border-bottom: 2px solid #adadad;
   margin: 30px;
   padding: 10px 10px;
 }
-
 .id {
   width: 100%;
-  border:none;
-  outline:none;
+  border: none;
+  outline: none;
   color: #636e72;
-  font-size:16px;
-  height:25px;
+  font-size: 16px;
+  height: 25px;
   background: none;
 }
-
 .pw {
   width: 100%;
-  border:none;
-  outline:none;
+  border: none;
+  outline: none;
   color: #636e72;
-  font-size:16px;
-  height:25px;
+  font-size: 16px;
+  height: 25px;
   background: none;
 }
-
 .btn {
-  position:relative;
-  left:40%;
+  position: relative;
+  left: 40%;
   transform: translateX(-50%);
   margin-bottom: 40px;
-  width:80%;
-  height:40px;
-  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  width: 80%;
+  height: 40px;
+  background: linear-gradient(125deg, #81ecec, #6c5ce7, #81ecec);
   background-position: left;
   background-size: 200%;
-  color:white;
+  color: white;
   font-weight: bold;
-  border:none;
-  cursor:pointer;
+  border: none;
+  cursor: pointer;
   transition: 0.4s;
-  display:inline;
+  display: inline;
 }
-
 .btn:hover {
   background-position: right;
 }
-
 .bottomText {
   text-align: center;
+} */
+
+* body {
+  width: 1920px;
+  height: 1080px;
+  background-color: #ebebeb;
+  padding: 240px 198px 240px 100px;
+}
+
+.BOX {
+  width: 900px;
+  height: 600px;
+  margin: 0 255px 0 0;
+  padding: 140px 200px 100px;
+  border-radius: 25px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+
+.Cnumber {
+  width: 500px;
+  height: 64px;
+  float: left;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 140px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: solid 1px #707070;
+  background-color: #ffffff;
+}
+
+.Snumber {
+  width: 500px;
+  height: 64px;
+  float: left;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: solid 1px #707070;
+  background-color: #ffffff;
+}
+
+.LoginButton {
+  width: 500px;
+  height: 64px;
+  float: left;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+  background-color: #2c5eff;
+
+  font-family: NotoSansKR;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: 0.47px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.NaccountButton {
+  width: 500px;
+  height: 64px;
+  float: left;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+  background-color: #f6ff15;
+
+  font-family: NotoSansKR;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: 0.47px;
+  text-align: center;
+  color: #000000;
+}
+
+.Pwlost {
+  margin-left: 500px;
+  margin-top: 10px;
+  margin-bottom: 100px;
+  font-family: NotoSansKR;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+
+  text-align: left;
+  color: #707070;
+}
+
+.Blogo {
+  width: 300px;
+  height: 300px;
+  margin: 92px 88px 32px 334px;
+
+  object-fit: contain;
+}
+
+.right {
+  float: right;
+  width: 300px;
+  height: 50px;
+  margin: 32px 0 71px 255px;
+  object-fit: contain;
+  font-family: NotoSansKR;
+  font-size: 36px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.47;
+  letter-spacing: 0.6px;
+  text-align: left;
+  color: #000000;
+}
+
+.rightfont {
+  font-family: Roboto;
 }

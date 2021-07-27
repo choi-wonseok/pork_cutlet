@@ -45,6 +45,13 @@
 <fieldset>
   <button type="submit">SIGN UP</button> 
 </fieldset>
+<a href="/account">login</a>
 </form>
+<% if (msg) {%>
+<script>
+  var msg = "<%= msg %>";
+  alert(msg);
+</script>
+<% } %>
 </body>
 </html>

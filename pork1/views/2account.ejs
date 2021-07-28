@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="css/style1.css" />
+  </head>
+
+  <body width="100%" height="100%">
+    <form action="/account" method="post" class="loginForm">
+      <h2><%= title %></h2>
+      <div class="idForm">
+        <input
+          type="text"
+          class="id"
+          id="userID"
+          name="userID"
+          placeholder="ID"
+        />
+      </div>
+      <div class="passForm">
+        <input
+          type="password"
+          class="pw"
+          id="password"
+          name="password"
+          placeholder="PW"
+        />
+      </div>
+      <input type="submit" class="btn" value="LOG IN" />
+      <div class="bottomText">
+        Don't you have ID? <a href="signup">sign up</a>
+      </div>
+    </form>
+    <% if (msg) {%>
+    <script>
+      var msg = "<%= msg %>";
+      alert(msg);
+    </script>
+    <% } %>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="css/style1.css" />
+  </head>
+
+  <body>
+    <form action="/account" method="post" class="loginForm">
+      <div class="BOX">
+        <div>
+          <input
+            type="text"
+            class="Cnumber"
+            id="userID"
+            name="userID"
+            placeholder="ID"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            class="Snumber"
+            id="password"
+            name="password"
+            placeholder="PW"
+          />
+        </div>
+        <div class="LoginButton"><input type="submit" value="LOG IN" /></div>
+        <div class="NaccountButton"><a href="signup">새 계정 만들기</a></div>
+        <div class="Pwlost">비밀번호를 잊어버리셨나요?</div>
+      </div>
+      <div><img src="img/Blogo.webp" class="Blogo" /></div>
+      <div class="Pork">
+        <p class="Porkfont">Pork Katsu에서 여러 학생들과 함께 성장하세요</p>
+      </div>
+    </form>
+    <% if (msg) {%>
+    <script>
+      var msg = "<%= msg %>";
+      alert(msg);
+    </script>
+    <% } %>
+  </body>
+</html>
+
+* { margin: 0px; padding: 0px; text-decoration: none; font-family: sans-serif; }
+body { background-color: #34495e; } .loginForm { position: absolute; width:
+300px; height: 400px; padding: 30px, 20px; background-color: #ffffff;
+text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%);
+border-radius: 15px; } .loginForm h2 { text-align: center; margin: 30px; }
+.idForm { border-bottom: 2px solid #adadad; margin: 30px; padding: 10px 10px; }
+.passForm { border-bottom: 2px solid #adadad; margin: 30px; padding: 10px 10px;
+} .id { width: 100%; border: none; outline: none; color: #636e72; font-size:
+16px; height: 25px; background: none; } .pw { width: 100%; border: none;
+outline: none; color: #636e72; font-size: 16px; height: 25px; background: none;
+} .btn { position: relative; left: 40%; transform: translateX(-50%);
+margin-bottom: 40px; width: 80%; height: 40px; background:
+linear-gradient(125deg, #81ecec, #6c5ce7, #81ecec); background-position: left;
+background-size: 200%; color: white; font-weight: bold; border: none; cursor:
+pointer; transition: 0.4s; display: inline; } .btn:hover { background-position:
+right; } .bottomText { text-align: center; }

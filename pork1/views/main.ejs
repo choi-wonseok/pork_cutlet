@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WEB - <%= title %></title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1><a href="/">WEB</a></h1>
+    <h2><%= title %></h2>
+    <%= description %>
+    <img
+      src="/img/hello.jpg"
+      style="width: 300px; display: block; margin-top: 10px"
+    />
+    <ul>
+      <% for(var i = 0; i < list.length; i++) {%>
+      <li><a href="/page/<%= list[i] %>"><%= list[i] %></a></li>
+      <% } %>
+    </ul>
+    <a href="/list">list</a>
+    <a href="/logout">logout</a>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/bbsstyle.css" />
+  </head>
+  <body>
+    <form action="/create" method="post">
+      <h1><a href="/">WEB</a></h1>
+      <h2><%= title %></h2>
+      <p><input type="text" name="bbs_no" id="bbs_no"placeholder="bbs_no"></p>
+      <p><input    type="text" id="post_id" name="post_id" placeholder="title" /></p>
+      <br>
+      <p>
+        <textarea name="contents" id="contents" placeholder="description"></textarea>
+      </p>
+      <p>
+        <input type="submit" />
+      </p>
+    </form>
+  </body>
+</html>

@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title %></title>
-    <meta charset="utf-8" />
-</head>
-<body>
-<h1><%= title %></h1>
+<%- include('header'); -%>
+
 <a href="/create">글쓰기</a>
 <a href="/list">전체보기</a>
 <table>
@@ -34,5 +28,4 @@
     <input type="text" name="query" placeholder="검색어를 입력하세요">
     <input type="submit"  value="검색">    
     </form>
-</body>
-</html>
+    <%- include('footer'); -%>

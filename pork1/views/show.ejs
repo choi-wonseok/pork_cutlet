@@ -1,24 +1,48 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-</head>
-<body>
-<h1>게시글</h1>
+<%- include('header'); -%>
+
+<% contents.forEach((data, index) => { %>
+
+<!--메인 바디-->
+<div class="container">
+    <!--왼쪽 사이드 바-->
+    <div class="left_sidebar">
+        
+    </div>
+    
+    <div class="main_contents">
+        <!--게시물-->
+        <div class="post">
+            <div class="user_profile">
+                <img src="" alt="" onerror="this.src='/img/NoAccount.png'">
+                <div>
+                    <p><%= data.WRT_ID%></p>
+                    <p><%= data.WRT_DTT %></p>
+                </div>
+            </div>
+            <p class="post_text"><%= data.CONTENTS %></p>
+
+            <!--게시물 밑에 옵션-->
+            <div class="post_options">
+                <div class="post_option">
+                    <span class="material-icons">thumb_up</span>
+                    <p>좋아요</p>
+                </div>
+                <div class="post_option">
+                    <span class="material-icons">chat_bubble_outline</span>
+                    <p>댓글</p>
+                </div>
+                <div class="post_option">
+                    <span class="material-icons">bookmark_border</span>
+                    <p>저장하기</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
+</div>
 
-<h2><%= data.POST_TITLE %></h2>
-<p>작성자 : <%= data.WRT_ID%></p>
-<p>조회수 : <%= data.VIEW_CNT%></p>
-<p>
-    <%= data.CONTENTS %>
-    <%= data.WRT_DTT %>
-</p>
-<% if (isMine) { %>
-<a href="/edit/<%=data.POST_NO%>">edit</a>
-<% } %>
-<a href="/list">list</a>
-</form>
-</body>
-</html>
+</div>
+<% }); %> 
+<%- include('footer'); -%>

@@ -1,3 +1,4 @@
+const { Console } = require("console");
 const exp = require("constants");
 var express = require("express");
 var router = express.Router();
@@ -33,8 +34,8 @@ router.get("/:id", async function (req, res, next) {
 router.post("/:id", function (req, res) {
   var post_title = req.body.title;
   var contents = req.body.contents;
-  var sql = `UPDATE post SET POST_TITLE=?, CONTENTS=? WHERE POST_NO=${req.params.id}`;
-  dbConnection.query(sql, [post_title, contents], function (err, result) {
+  var sql = `CALL dongas.post_update(${req.params.id},'${post_title}','${contents}')`;
+  dbConnection.query(sql, function (err, result) {
     console.log(result);
     if (err) {
       console.log(err);

@@ -168,7 +168,7 @@ exports.login = async (req, res) => {
       if (result.length == 0) {
         return res.render("account", {
           title: "로그인",
-          msg: "Invalid ID.",
+          msg: "일치하는 정보가 없습니다.",
         });
       }
 
@@ -185,7 +185,7 @@ exports.login = async (req, res) => {
 
       res.render("account", {
         title: "로그인",
-        msg: "Invalid Password.",
+        msg: "비밀번호가 일치하지 않습니다",
       });
     }
   });

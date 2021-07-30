@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport content=" width="device-width" , initial-scale="1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/PK_Login.css" />
+    <title>Pork Katsu : 우리들의 커뮤니티</title>
+  </head>
+
+  <body>
+    <!--로그인 폼-->
+    <form action="/account" method="post">
+      <input type="text" id="userID" name="userID" placeholder="학번" />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="비밀번호"
+      />
+      <br />
+      <input class="btn1" type="submit" value="로그인" /> <br />
+      <input
+        type="button"
+        class="btn2"
+        value="새 계정 만들기"
+        onclick="location.href='signup'"
+      />
+      <br />
+      <a href="" class="f-pws">비밀번호를 잊어버리셨나요?</a>
+    </form>
+
+    <!--우측 로고와 소개 멘트-->
+    <div class="f-container">
+      <img src="img/Logo-PK.webp" alt="Porkkatsu" />
+      <p>
+        Pork Katsu에서 여러학생들과 <br />
+        소통하고 함께 성장해보세요!
+      </p>
+    </div>
+    <% if (msg) {%>
+    <script>
+      var msg = "<%= msg %>";
+      alert(msg);
+    </script>
+    <% } %>
+  </body>
+</html>

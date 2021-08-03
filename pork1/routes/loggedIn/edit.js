@@ -16,7 +16,7 @@ router.get("/:id", async function (req, res, next) {
 
     if (!result.length) {
       req.session.msg = "잘못된 접근입니다.";
-      res.redirect("/list");
+      res.redirect("/index");
     } else {
       res.render("edit", { title: "게시글", data: result[0] });
     }
@@ -41,7 +41,7 @@ router.post("/:id", function (req, res) {
       console.log(err);
       res.status(500).send("Internal Server Error");
     } else {
-      res.redirect(`/show/${req.params.id}`);
+      res.redirect("/show");
     }
   });
 });

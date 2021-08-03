@@ -1,22 +1,35 @@
 <%- include('header'); -%>
 
-<% contents.forEach((data, index) => { %>
 
-<!--메인 바디-->
-<div class="container">
-    <!--왼쪽 사이드 바-->
-    <div class="left_sidebar">
+<% contents.forEach((data, index) => { %>
+    <!--메인 바디-->
+    <div class="container">
+        <!--왼쪽 사이드 바-->
+        <div class="left_sidebar">
+            
+        </div>
         
-    </div>
-    
-    <div class="main_contents">
+        <div class="main_contents">
+            <!-- <div class="post">
+                <div class="user_profile">
+                    <img src="" alt="" onerror="this.src='/img/NoAccount.png'">
+                    <div>
+                        <input type="button" value="글작성" onclick="showPopup();" />
+                    </div>
+                </div>
+            </div> -->
         <!--게시물-->
         <div class="post">
             <div class="user_profile">
                 <img src="" alt="" onerror="this.src='/img/NoAccount.png'">
                 <div>
                     <p><%= data.WRT_ID%></p>
-                    <p><%= data.WRT_DTT %></p>
+                    <br>
+                    <%= data.WRT_DTT %>
+                    <br>
+                    <% if (data.WRT_ID == userID) { %>
+                        <a href="/edit/<%= data.POST_NO %>">수정</a>
+                    <% } %>
                 </div>
             </div>
             <p class="post_text"><%= data.CONTENTS %></p>

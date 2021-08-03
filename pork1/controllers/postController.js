@@ -34,6 +34,6 @@ exports.bbs = async (req, res) => {
       if (result) req.session.msg = "작성완료.";
       console.log(result);
     }
-    res.redirect("list");
+    res.redirect("home");
   });
 };

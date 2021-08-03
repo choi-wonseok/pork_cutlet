@@ -10,8 +10,8 @@ const rl = readline.createInterface({
 var dbConnection = mysql.createConnection({
   host: "localhost",
   port: "3306",
-  user: "pork",
-  password: "ehsrktm",
+  user: "root",
+  password: "123456789a",
   database: "dongas",
 });
 

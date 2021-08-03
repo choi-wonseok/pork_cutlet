@@ -3,15 +3,20 @@
   <head>
     <title><%= title %></title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="css/bbsstyle.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bbsstyle.css" />
   </head>
   <body>
     <form action="/create" method="post">
-      <h1><a href="/">WEB</a></h1>
+      <h1><a href="/home">WEB</a></h1>
       <h2><%= title %></h2>
-      <p>
-        <input id="bbs_no" type="text" name="bbs_no" placeholder="bbs_no" />
-      </p>
+      <div>
+        <select id="bbs_no" name="bbs_no" class="box" required>
+          <option value="">게시판선택</option>
+          <option value="1">자유게시판</option>
+          <option value="2">계열게시판</option>
+          <option value="3">동아리</option>
+        </select>
+      </div>
       <p>
         <input
           id="post_title"

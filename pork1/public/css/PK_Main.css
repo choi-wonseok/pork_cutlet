@@ -186,6 +186,7 @@ body {
 }
 .user_profile p {
   margin-bottom: -5px;
+  font-size: 20px;
   font-weight: 500;
   color: black;
 }
@@ -202,7 +203,7 @@ body {
 .post_text {
   color: 9a9a9a;
   margin: 15px 0;
-  font-size: 15px;
+  font-size: 24px;
 }
 
 .post_img {

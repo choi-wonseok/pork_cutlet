@@ -10,18 +10,18 @@ const dbConnection = require(listPath);
 router.get("/", async function (req, res) {
   var sql = `CALL dongas.post_select_by_subject('${
     req.signedCookies.userID
-  }', 10, ${1 - 1});`;
+  }',2 ,10, ${1 - 1});`;
 
-  await dbConnection.query(sql, async function (err, result) {
+  await dbConnection.query(sql, async function (err, result, isMine) {
     if (err) console.error("err : " + err);
-    var isMine = [];
-
-    // if (result[0][0].WRT_ID == req.signedCookies.userID) isMine = true;
+    // var isMine = false;
+    // console.log(req.params.login_id);
+    // if (result[0].WRT_ID == req.signedCookies.userID) isMine = true;
 
     res.render("show", {
       title: "게시글",
       contents: result[0],
-      // isMine: isMine,
+      userID: req.signedCookies.userID,
     });
   });
 });

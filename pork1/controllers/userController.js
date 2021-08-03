@@ -37,10 +37,11 @@ exports.register = async (req, res) => {
   const { body } = req;
   const hashPass = await bcrypt.hash(body.password, 12);
   // CALL dongas.register(:p_id,:p_name,:p_password,:p_haksa,:p_email);
-  let sql = mysql.format("CALL dongas.register(?, ?, ?, ?, ?);", [
+  let sql = mysql.format("CALL dongas.register(?, ?, ?, ?, ?, ?);", [
     body.userid,
     body.fullname,
     hashPass,
+    body.gender,
     body.haksa,
     body.email,
   ]);

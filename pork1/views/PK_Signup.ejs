@@ -123,27 +123,53 @@
         </div>
 
         <!-- 학부/학과 -->
-        <form>
-          <h3 class="join_title"><label for="haksa">계열</label></h3>
-          <select id="haksa" name="haksa" class="box">
-            <option value="">계열선택</option>
-            <option value="인공지능">융합스마트계열</option>
-            <option value="정보보안">정보보안계열</option>
-            <option value="게임">게임계열</option>
-            <option value="디지털디자인">디자인계열</option>
+        <form id="haksa" name="haksk">
+          <h3 class="join_title"><label for="sub">학부/학과</label></h3>
+          <select id="sub" class="box">
+            <option value="">학과 선택</option>
+            <optgroup label="인공지능">
+              <option value="DR">드론/로봇</option>
+              <option value="CS">컴퓨터공학</option>
+              <option value="SS">소프트웨어공학</option>
+              <option value="BD">인공지능</option>
+            </optgroup>
+
+            <optgroup label="정보보안">
+              <option value="CS">융합보안(인공지능/IOT)</option>
+              <option value="IS">정보보안</option>
+              <option value="HK">해킹</option>
+              <option value="DF">디지털포렌식(사이버수사)</option>
+            </optgroup>
+
+            <optgroup label="게임">
+              <option value="GA">게임인공지능프로그래밍</option>
+              <option value="GP">게임</option>
+              <option value="GD">게임아트디자인</option>
+            </optgroup>
+
+            <optgroup label="디지털 디자인">
+              <option value="DD">디지털디자인</option>
+              <option value="IS">일러스트레이션/드로잉</option>
+              <option value="MY">미디어/유튜브</option>
+              <option value="WA">웹툰/애니</option>
+            </optgroup>
+
+            <optgroup label="전기공학">
+              <option value="EL">전기공학</option>
+            </optgroup>
           </select>
           <span class="error_next_box"></span>
         </form>
 
         <!-- JOIN BTN-->
         <div class="btn_area" style="text-align: center">
-          <button id="btnJoin" type="submit">
+          <button type="button" id="btnJoin" type="submit">
             <span>계정 생성하기</span>
           </button>
         </div>
       </div>
     </form>
-    <script src="PK_Signup.js"></script>
+    <script src="/PK_Signup.js"></script>
     <% if (msg) {%>
     <script>
       var msg = "<%= msg %>";

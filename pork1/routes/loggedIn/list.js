@@ -11,8 +11,8 @@ router.get("/", async function (req, res) {
   var sql = `CALL dongas.post_select_by_subject('${
     req.signedCookies.userID
   }',2 ,10, ${1 - 1});`;
-
-  await dbConnection.query(sql, async function (err, result, isMine) {
+  var sql2 = `SELECT * FROM uni_login WHERE login_id='${req.signedCookies.userID}'`;
+  await dbConnection.query(sql + sql2, async function (err, result, isMine) {
     if (err) console.error("err : " + err);
     // var isMine = false;
     // console.log(req.params.login_id);
@@ -21,6 +21,7 @@ router.get("/", async function (req, res) {
     res.render("show", {
       title: "게시글",
       contents: result[0],
+      users: result[2][0],
       userID: req.signedCookies.userID,
     });
   });

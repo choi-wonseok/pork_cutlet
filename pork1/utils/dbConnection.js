@@ -13,6 +13,7 @@ var dbConnection = mysql.createConnection({
   user: "root",
   password: "123456789a",
   database: "dongas",
+  multipleStatements: true,
 });
 
 module.exports = dbConnection;

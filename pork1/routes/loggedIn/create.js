@@ -1,15 +1,31 @@
 var express = require("express");
 var router = express.Router();
 var path = require("path");
+const multer = require("multer");
 
 const controllerPath = path.resolve(__dirname, "..", "..", "controllers");
 const { bbs } = require(path.resolve(controllerPath, "postController"));
 
+//imge
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, done) => {
+      done(null, "./public/user_img/");
+    },
+    //지정
+    // convert a file name
+    filename: (req, file, done) => {
+      const ext = path.extname(file.originalname);
+      done(null, [1] + path.basename(file.originalname, ext) + ext);
+      // cb(null, new Date().valueOf() + path.extname(file.originalname));
+    },
+  }),
+});
 /* GET users listing. */
 router.get("/", function (req, res) {
   res.render("create", { title: "Welcome" });
 });
-router.post("/", bbs);
+router.post("/", upload.single("userfile"), bbs);
 
 module.exports = router;
 

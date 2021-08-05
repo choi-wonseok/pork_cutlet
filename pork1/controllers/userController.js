@@ -181,7 +181,7 @@ exports.login = async (req, res) => {
           httpOnly: true,
           signed: true,
         });
-        return res.redirect("home");
+        return res.redirect("index");
       }
 
       res.render("account", {

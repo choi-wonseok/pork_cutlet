@@ -12,6 +12,7 @@ var editRouter = require("./loggedIn/edit");
 var deleteRouter = require("./loggedIn/delete");
 var searchRouter = require("./loggedIn/search");
 var commentRouter = require("./loggedIn/comment");
+var profileRouter = require("./loggedIn/profile");
 
 router.get("/", (req, res) => res.redirect("index"));
 router.use("/create", createRouter);
@@ -24,5 +25,6 @@ router.use("/edit", editRouter);
 router.use("/delete", deleteRouter);
 router.use("/search", searchRouter);
 router.use("/comment", commentRouter);
+router.use("/profile", profileRouter);
 
 module.exports = router;

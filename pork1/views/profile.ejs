@@ -1,0 +1,42 @@
+<%- include('header'); -%>
+<!--메인 바디-->
+<div class="modal_wrap">
+  <!--왼쪽 사이드 바-->
+  <div class="sidebar_user_profile">
+    <!--이미지 자리-->
+    <div>
+      <div class="profile_img">
+        <img src="/img/Logo-PK.webp" alt="" />
+      </div>
+      <p><%= users.NAME %></p>
+      <p><%= users.EMAIL %></p>
+    </div>
+  </div>
+  <div class="sidebar_user_info">
+    <h3>내 정보</h3>
+    <p>
+      <%= users.GENDER %><br />계열: <%= users.HAKSA_NUM %><br />테니스 동아리
+      참여 중
+    </p>
+  </div>
+  <diV class="sidebar_user_stack">
+    <p>My Stacks & tech</p>
+    <div class="sidebar_used_tool">
+      <span class="sidebar_hash">#</span>
+      <p>react.js</p>
+    </div>
+    <div class="sidebar_used_tool">
+      <span class="sidebar_hash">#</span>
+      <p>typescript</p>
+    </div>
+    <div class="sidebar_used_tool">
+      <span class="sidebar_hash">#</span>
+      <p>next.js</p>
+    </div>
+    <div class="sidebar_used_tool">
+      <span class="sidebar_hash">#</span>
+      <p>express.js</p>
+    </div>
+  </diV>
+</div>
+<%- include('footer'); -%>

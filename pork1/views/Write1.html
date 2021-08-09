@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lnag="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport content=" width="device-width" , initial-scale="1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/Write.css" />
+    <title>Pork Katsu : 우리들의 커뮤니티</title>
+
+    <style type="text/css">
+      a:link { text-decoration: none;}
+      a:visited { color: rgb(255, 255, 255); text-decoration: none;}
+      a:hover { color: white; text-decoration: underline;}
+    </style>
+
+  </head>
+
+  <body>
+    <form>
+      <div class="black_bg"></div>
+        <div class="modal_wrap">
+            <div class="modal_close" onClick="location.href='javascript:history.back();'"><a href="# ">close</a></div> 
+            <!-- wrapper -->
+    <form action="/create" method="POST" id="wrapper">
+      <!-- content-->
+      <div id="content">
+        <div class="title">
+          <h2>글을 작성해보아요.</h2>
+        </div>
+        <!-- 게시글 -->
+        <div>
+          <h3 class="join_title"><label for="fullname"></label></h3>
+          <span class="box int_name">
+            <input
+              type="text"
+              name="text"
+              id="text"
+              class="int"
+              placeholder="게시글을 작성해보아요."/>
+          </span>
+        </div>
+  
+
+      <!-- JOIN BTN-->
+      <div class="btn_area" style="text-align: center;">
+          <button type="button" id="btnJoin" type="submit">
+              <span><div class="btnJoin" onClick="location.href=''"><a href="#">게시글 등록</a></div></span>
+          </button>
+      </div>
+
+    <div class="btn_area2" style="text-align: center;">
+      <button type="button" id="btnJoin2" type="submit">
+          <span><div class="btnJoin2" onClick="location.href=''"><a href="#">수정</a></div></span>
+        </button>
+
+        <div class="btn_area3" style="text-align: center;">
+          <button type="button" id="btnJoin3" type="submit">
+              <span><div class="btnJoin3" onClick="location.href=''"><a href="#">삭제</a></div></span>
+              </button>
+  </div>
+  </div>
+
+  <form>
+    <h4 class="join_title"><label for="bbs_no">게시판선택</label></h4>
+    <div>
+      <select id="bbs_no" name="bbs_no" class="box" required>
+        <option value="">게시판선택</option>
+        <option value="1">자유게시판</option>
+        <option value="2">계열게시판</option>
+        <option value="3">동아리</option>
+      </select>
+    </div>
+    <span class="error_next_box"></span>
+
+</form>
+
+
+  <!--이미지 미리보기-->
+  <form>
+
+    <input type="file" class="img" id="img" accept="image/*" onchange="setThumbnail(event);" multiple/> 
+        <div id="image_container"></div> 
+
+     </form>
+   </body> 
+</html>

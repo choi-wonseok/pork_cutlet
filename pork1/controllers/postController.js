@@ -20,9 +20,10 @@ exports.bbs = async (req, res) => {
     if (err) {
       let errResult;
       let errMsg = err.sqlMessage.split("'");
+      console.log(errMsg);
       let errField = errMsg[errMsg.length - 2];
-      if (errField == "post_contents.PRIMARY") {
-        errResult = "입력된 값이 없습니다";
+      if (errField == "post.contents.BBS_NO") {
+        errResult = "게시판 오류";
       } else if (errField == "post.contents.POST_NO") {
         errResult = "이미 존재하는 EMAIL입니다.";
       } else if (errField == "post.contents.CONTENTS") {
@@ -33,6 +34,9 @@ exports.bbs = async (req, res) => {
     } else {
       if (result) req.session.msg = "작성완료.";
       console.log(result);
+    }
+    if (req.file.filename != null) {
+      body.post_title = req.file.filename;
     }
     res.redirect("index");
   });

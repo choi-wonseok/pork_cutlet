@@ -1,5 +1,47 @@
 <%- include('header'); -%>
 
+ <!--헤더 우측-->
+ <div class="header_right">
+    <span class="material-icons">notifications_none</span>
+    <div onclick="settingsMenuToggle()">
+      <span class="material-icons">expand_more</span>
+    </div>
+
+    <!-- 토글 드롭 다운 -->
+    <div class="settings_menu">
+      <div class="settings_menu_inner">
+        <div class="setting_links">
+          <div class="settings_icon">
+            <span class="material-icons">settings</span>
+          </div>
+          <a href="#">환경설정</a>
+        </div>
+        <hr />
+        <div class="setting_links">
+          <div class="settings_icon">
+            <span class="material-icons">manage_accounts</span>
+          </div>
+          <a href="/profile/edit/<%= userID%>">내 정보 수정</a>
+        </div>
+        <hr />
+        <div class="setting_links">
+          <div class="settings_icon">
+            <span class="material-icons">create</span>
+          </div>
+          <a href="/create">게시물 작성</a>
+        </div>
+        <hr />
+        <div class="setting_links">
+          <div class="settings_icon">
+            <span class="material-icons">logout</span>
+          </div>
+          <a href="/logout">로그아웃</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--헤더 오른쪽-->
+</header>
 
 
     <!--메인 바디-->
@@ -10,7 +52,7 @@
                 <!--이미지 자리-->
                 <div>
                     <div class="profile_img">
-                        <img src="/img/Logo-PK.webp" alt="">
+                        <img src="/profile_img/<%= users.MY_PIC %>" alt="">
                     </div>
                     <p><%= users.NAME %></p>
                     <p><%= users.EMAIL %></p>
@@ -18,14 +60,15 @@
             </div>
             <div class="sidebar_user_info">
                 <h3> 내 정보 </h3>
-                <p><%= users.GENDER %><br>계열: <%= users.HAKSA_NUM %><br>테니스 동아리 참여 중
+                <p><%= users.GENDER %><br>계열: <%= users.HAKSA_NUM %><br>
+                    동아리 활동: <%= users.TEAMS %> 
                 </p>
             </div>
             <diV class="sidebar_user_stack">
                 <p class="Stitle">내 소개글</p>
                 <div class="sidebar_used_tool">
                     <span class="sidebar_hash"></span>
-                    <p>안녕하세요 한 줄 소개글 입니다.</p>
+                    <p><%= users.ABOUT %></p>
                 </div>
 
             </diV>
@@ -33,7 +76,7 @@
                 <p>My Stacks & tech</p>
                 <div class="sidebar_used_tool">
                     <span class="sidebar_hash">#</span>
-                    <p>react.js</p>
+                    <p><%= users.MY_SKILL %></p>
                 </div>
                 <div class="sidebar_used_tool">
                     <span class="sidebar_hash">#</span>
@@ -60,7 +103,7 @@
 
         <div class="post">
             <div class="user_profile">
-                <img src="" alt="" onerror="this.src='/img/NoAccount.png'">
+                <img src="/profile_img/<%= data.MY_PIC %>" alt="" onerror="this.src='/img/NoAccount.png'">
                 <div>
                     <p><a href="/profile/<%= data.WRT_ID%>"><%= data.WRT_ID%></a></p>
                     <a href="#" class="menu" onclick="sideMenu();">
@@ -70,10 +113,12 @@
                         <li><a href="">게시물 수정</a></li>
                         <li><a href="">게시물 삭제</a></li>
                     </div>
+                    <!-- if (data.WRT_ID == userID) { %>
+                       <a href="/edit/ data.POST_NO %>">수정</a>
+                    } %>
+                    <br> -->
+                    
                     <%= data.WRT_DTT %>
-                     <!-- if (data.WRT_ID == userID) { %> -->
-                        <!-- <a href="/edit/ data.POST_NO %>">수정</a> -->
-                     <!-- } %> -->
                     </div>
                 </div>
                 <p class="post_text"><%= data.CONTENTS %></p>
@@ -87,7 +132,7 @@
                         <span class="material-icons">thumb_up</span>
                         <p>좋아요</p>
                     </div>
-                    <div class="post_option"  onclick="comment()">
+                    <div class="post_option"  onclick="location.href='comment/<%= data.POST_NO %>'">
                         <span class="material-icons">chat_bubble_outline</span>
                         <p>댓글</p>
                     </div>

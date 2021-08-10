@@ -1,4 +1,6 @@
 .modal_wrap {
+  overflow: auto;
+  overflow-x: hidden;
   width: 500px;
   height: 600px;
   position: absolute;
@@ -38,14 +40,17 @@
 
 #form-commentInfo {
   width: 100%;
+  margin-left: 25px;
+  margin-top: 80px;
 }
 
 #comment-count {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-left: 0px;
 }
 
 #comment {
-  width: 50%;
+  width: 70%;
   height: 3.3em;
 }
 
@@ -66,10 +71,11 @@
 
 #comments {
   margin-top: 10px;
+  margin-left: 20px;
 }
 
 .eachComment {
-  width: 50%;
+  width: 90%;
   margin: 10px;
   padding: 0.5em;
   border-bottom: 1px solid #c1bcba;

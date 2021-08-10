@@ -15,7 +15,7 @@ router.get("/", async function (req, res) {
     // var isMine = false;
     // console.log(result[0][0]);
     // if (result[0][0].WRT_ID == req.signedCookies.userID) isMine = true;
-
+    console.log(result[0]);
     res.render("show", {
       title: "게시글",
       contents: result[0],

@@ -11,7 +11,7 @@ exports.bbs = async (req, res) => {
   // CALL dongas.bbs(:p_bbs_no,:p_post_title,:p_contents);
   let sql = mysql.format("CALL dongas.bbs(?, ?, ?,?);", [
     body.bbs_no,
-    body.post_title,
+    (body.post_title = req.file ? req.file.filename : null),
     req.signedCookies.userID,
     body.contents,
   ]);
@@ -34,9 +34,6 @@ exports.bbs = async (req, res) => {
     } else {
       if (result) req.session.msg = "작성완료.";
       console.log(result);
-    }
-    if (req.file.filename != null) {
-      body.post_title = req.file.filename;
     }
     res.redirect("index");
   });

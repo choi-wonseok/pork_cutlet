@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/bbsstyle.css" />
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script> 
+      function setThumbnail(event) { 
+        var reader = new FileReader(); 
+        reader.onload = function(event) {
+           var img = document.createElement("img");
+            img.setAttribute("src", event.target.result);
+             document.querySelector("div#image_container").appendChild(img); };
+              reader.readAsDataURL(event.target.files[0]); } 
+              </script>      
+  </head>
+  <body>
+    <form action="/create"  method="post">
+      <h1><a href="/index">WEB</a></h1>
+      <h2><%= title %></h2>
+      <div>
+        <select id="bbs_no" name="bbs_no" class="box" required>
+          <option value="">게시판선택</option>
+          <option value="1">자유게시판</option>
+          <option value="2">계열게시판</option>
+          <option value="3">동아리</option>
+        </select>
+      </div>
+      <p>
+        <textarea id="contents" name="contents" placeholder="description">
+        </textarea>
+      </p>
+      <input
+        type="file"
+        id="userfile"
+        name="userfile"
+        onchange="setThumbnail(event);"
+      multiple/>
+      <p>
+        <input type="submit" />
+        <div id="image_container"></div> 
+      </p>
+    </form>
+    <script src="dragdrop.js"></script>
+  </body>
+</html>
+
+
+
+

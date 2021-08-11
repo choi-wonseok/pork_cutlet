@@ -24,7 +24,7 @@
         <% contents.forEach((data, index) => { %>
          
             <div class = "comments"> 
-              <p><%= data.WRT_ID%></p>
+              <p><a href="/profile/<%= data.WRT_ID%>"><%= data.WRT_ID%></a></p>
                     <%= data.COMMENT %>
                     <br>
                     <p> <%= data.WRT_DTT %></p>

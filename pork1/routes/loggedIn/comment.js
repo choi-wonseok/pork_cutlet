@@ -13,9 +13,12 @@ const dbConnection = require(listPath);
 //   res.render("comment", { title: "Welcome" });
 // });
 router.get("/:post_no", function (req, res) {
-  var sql = `SELECT COMMENT, WRT_ID, date_format(WRT_DTT,'%Y-%m-%d %H:%i:%s') WRT_DTT FROM reply WHERE POST_NO=${req.params.post_no}`;
+  // { CALL dongas.comment_read(:r_post_no) }
+  // var sql = `SELECT COMMENT, WRT_ID, date_format(WRT_DTT,'%Y-%m-%d %H:%i:%s') WRT_DTT FROM reply WHERE POST_NO=${req.params.post_no}`;
+  var sql = `CALL dongas.comment_read('${req.params.post_no}')`;
+
   dbConnection.query(sql, function (err, result) {
-    res.render("comment", { contents: result });
+    res.render("comment", { contents: result[0] });
   });
 });
 router.post("/:post_no", comments);

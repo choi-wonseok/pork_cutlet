@@ -6,9 +6,9 @@ var path = require("path");
 const listPath = path.resolve(__dirname, "..", "..", "utils", "dbConnection");
 
 const dbConnection = require(listPath);
-
+// 10, ${1 - 1}
 router.get("/", async function (req, res) {
-  var sql = `CALL dongas.post_select_by_id(1, 10, ${1 - 1});`;
+  var sql = `CALL dongas.post_select_by_id(1);`;
   var sql2 = `SELECT * FROM uni_login WHERE login_id='${req.signedCookies.userID}'`;
   await dbConnection.query(sql + sql2, async function (err, result) {
     if (err) console.error("err : " + err);

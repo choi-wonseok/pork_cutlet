@@ -10,9 +10,7 @@ const { homePage } = require(path.resolve(controllerPath, "userController"));
 const dbConnection = require(listPath);
 
 router.get("/", async function (req, res) {
-  var sql = `CALL dongas.post_by_myself('${req.signedCookies.userID}', 10, ${
-    1 - 1
-  });`;
+  var sql = `CALL dongas.post_by_myself('${req.signedCookies.userID}'});`;
   var sql2 = `SELECT * FROM uni_login WHERE login_id='${req.signedCookies.userID}'`;
   await dbConnection.query(sql + sql2, async function (err, result) {
     if (err) console.error("err : " + err);

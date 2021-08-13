@@ -28,6 +28,16 @@ $(this).click(function (e) {
   e.preventDefault();
 });
 
+$(function () {
+  $(".post").slice(0, 10).show();
+  $(".more").click(function (e) {
+    e.preventDefault();
+    $(".post:hidden").slice(0, 5).slideDown();
+    if ($(".post:hidden").length == 0) {
+      $(".more").fadeOut("slow");
+    }
+  });
+});
 // $(document).ready(function () {
 //   var spanSubmit = $(".submit-span");
 

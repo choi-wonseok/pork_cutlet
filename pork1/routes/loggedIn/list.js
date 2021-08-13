@@ -8,11 +8,10 @@ const listPath = path.resolve(__dirname, "..", "..", "utils", "dbConnection");
 const dbConnection = require(listPath);
 
 router.get("/", async function (req, res) {
-  var sql = `CALL dongas.post_select_by_subject('${
-    req.signedCookies.userID
-  }',2 ,10, ${1 - 1});`;
+  var sql = `CALL dongas.post_select_by_subject('${req.signedCookies.userID}',2 );`;
   var sql2 = `SELECT * FROM uni_login WHERE login_id='${req.signedCookies.userID}'`;
   await dbConnection.query(sql + sql2, async function (err, result, isMine) {
+    console.log(result[0]);
     if (err) console.error("err : " + err);
     // var isMine = false;
     // console.log(req.params.login_id);

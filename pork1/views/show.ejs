@@ -52,7 +52,7 @@
                 <!--이미지 자리-->
                 <div>
                     <div class="profile_img">
-                        <img src="/profile_img/<%= users.MY_PIC %>" alt="">
+                        <img src="/profile_img/<%= users.MY_PIC %>" alt="" onerror="this.src='/img/NoAccount.png'">
                     </div>
                     <p><%= users.NAME %></p>
                     <p><%= users.EMAIL %></p>
@@ -143,8 +143,11 @@
                  </div>
                 </div>
             </div>
+            <% }); %> 
+            <button class="more" id="more">
+                더보기
+            </button>
         </div>
-        <% }); %> 
     <!-- </div> -->
 </div>
 <%- include('footer'); -%>

@@ -28,16 +28,64 @@ $(this).click(function (e) {
   e.preventDefault();
 });
 
+// 더보기
+
 $(function () {
-  $(".post").slice(0, 10).show();
+  $(".main_contents").slice(0, 10).show();
   $(".more").click(function (e) {
     e.preventDefault();
-    $(".post:hidden").slice(0, 5).slideDown();
-    if ($(".post:hidden").length == 0) {
+    $(".main_contents:hidden").slice(0, 5).slideDown();
+    if ($(".main_contents:hidden").length == 0) {
       $(".more").fadeOut("slow");
     }
   });
 });
+
+// $(document).ready(function () {
+//   $("#comment_list").on("click", function () {
+//     $.ajax({
+//       URL: "/list",
+//       type: "GET",
+//       success: function (contents) {
+//         $("#demo").empty();
+//         $("#demo").append("<form method='post' action=''");
+//         $("#demo").append(
+//           "<input id='comment' name='comment' placeholder='댓글'>"
+//         );
+//         $("#demo").append("<button id='submit'>등록</button>");
+//         $("#demo").append("</form>");
+//         $(contents).each(function (index, data) {
+//           $("#demo").append("<div class='comments'");
+//           $("#demo").append("<p>" + data.CONTENTS + "</p>");
+//           $("#demo").append("<br>");
+//           $("#demo").append(data.COMMENT);
+//           $("#demo").append("<p>" + data.WRT_DTT + "</p>");
+//           $("#demo").append("</div>");
+//           $("#demo").append("<hr>");
+//         });
+//       },
+//     });
+//   });
+// });
+
+// $(function () {
+//   $("#like").click(function () {
+//     var $this = $("#material-icons");
+//     if ($this.hasId("highlighted")) {
+//       $this.removeId("highlighted");
+//     } else {
+//       $this.addId("highlighted");
+//     }
+//   });
+// });
+// $(function () {
+//   var cnt = 0;
+//   $("#like").click(function () {
+//     cnt++;
+//     $("#like_cnt").text("thumb_up" + cnt);
+//   });
+// });
+
 // $(document).ready(function () {
 //   var spanSubmit = $(".submit-span");
 

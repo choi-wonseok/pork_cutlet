@@ -21,21 +21,21 @@
           <div class="settings_icon">
             <span class="material-icons">manage_accounts</span>
           </div>
-          <a href="/profile/edit/<%= userID%>">내 정보 수정</a>
+          <p onclick="location.href='/profile/edit/<%= userID%>'">내 정보 수정</p>
         </div>
         <hr />
         <div class="setting_links">
           <div class="settings_icon">
             <span class="material-icons">create</span>
           </div>
-          <a href="/create">게시물 작성</a>
+          <p onclick="location.href='/create'">게시물 작성</p>
         </div>
         <hr />
         <div class="setting_links">
           <div class="settings_icon">
             <span class="material-icons">logout</span>
           </div>
-          <a href="/logout">로그아웃</a>
+          <p onclick="location.href='/logout'">로그아웃</a>
         </div>
       </div>
     </div>
@@ -105,11 +105,10 @@
             <div class="user_profile">
                 <img src="/profile_img/<%= data.MY_PIC %>" alt="" onerror="this.src='/img/NoAccount.png'">
                 <div>
-                    <p><a href="/profile/<%= data.WRT_ID%>"><%= data.NAME%></a></p>
+                    <div class="user_names" onclick="location.href='/profile/<%= data.WRT_ID%>'"><%= data.NAME%></div>
                    <% if (data.WRT_ID == userID) { %>
-                       <a href="/edit/<%= data.POST_NO %>">수정</a>
+                       <div class="edit_btn" onclick="location.href='/edit/<%= data.POST_NO %>'">수정</div>
                     <% }; %>
-                    <br>
                     <!-- <a href="#" class="menu" onclick="sideMenu();">
                         <span class="material-icons">more_horiz</span>
                     </a>
@@ -125,14 +124,17 @@
                 <p>
                     <img class="user_img" src="/user_img/<%= data.POST_TITLE %>" alt="">
                 </p>
+                <div id="like_cnt" class="material-icons">thumb_up <span>0</span></div>
                 
                 <!--게시물 밑에 옵션-->
                 <div class="post_options">
-                    <div class="post_option">
-                        <span class="material-icons">thumb_up</span>
+                    <div class="post_option" id="like">
+                        <span class="material-icons" id="highlight">thumb_up</span>
                         <p>좋아요</p>
                     </div>
-                    <div class="post_option"  onclick="location.href='comment/<%= data.POST_NO %>'">
+                    <!-- data-toggle="collapse" data-target="#demo=data.POST_NO %>" -->
+                    <!-- onclick="location.href='comment/= data.POST_NO %>'" -->
+                    <div class="post_option" onclick="location.href='comment/<%= data.POST_NO %>'" id="comment_list">
                         <span class="material-icons">chat_bubble_outline</span>
                         <p>댓글</p>
                     </div>
@@ -141,6 +143,11 @@
                     <p>저장하기</p>
                 </div>
                  </div>
+                 <!-- <div id="demo">
+                     <hr>
+                     
+                     
+                </div> -->
                 </div>
             </div>
             <% }); %> 
@@ -150,4 +157,5 @@
         </div>
     <!-- </div> -->
 </div>
+
 <%- include('footer'); -%>

@@ -134,13 +134,17 @@ body {
   border-radius: 50%;
 }
 
-.setting_links a {
+.setting_links p {
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
   color: #626262;
+  cursor: pointer;
+}
+.setting_links p:hover {
+  font-weight: bold;
 }
 
 /*푸터*/
@@ -182,7 +186,6 @@ body {
   justify-content: space-between;
 }
 .right_container {
-  position: sticky;
   float: right;
   display: block;
   overflow: hidden;
@@ -273,6 +276,7 @@ body {
 }
 /*메인 콘텐츠*/
 .main_contents {
+  display: none;
   width: 1300px;
   height: 100%;
   padding: 15px 25px;
@@ -303,7 +307,7 @@ body {
   background: royalblue;
   border: none;
   counter-reset: #fff;
-  margin: 20px auto;
+  margin: 20px;
   display: block;
   font-size: pointer;
   outline: none;
@@ -350,6 +354,9 @@ body {
   padding: 5px;
   flex: 1;
 }
+.post_option:hover .material-icons {
+  color: blue;
+}
 
 .post_option p {
   margin-left: 10px;
@@ -359,6 +366,22 @@ body {
   background-color: #eff2f5;
   border-radius: 10px;
 }
+.user_names {
+  font-weight: bold;
+  cursor: pointer;
+}
+.user_names:hover {
+  text-decoration: underline;
+}
+.edit_btn {
+  color: grey;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.edit_btn:hover {
+  text-decoration: underline;
+}
 
 .user_img {
   width: inherit;
@@ -367,6 +390,18 @@ body {
   max-height: 60%;
   border-radius: 4px;
   margin-bottom: 5px;
+}
+#like_cnt {
+  color: blue;
+  font-size: 16px;
+  font-weight: 600;
+}
+#like_cnt span {
+  color: grey;
+  font-size: 16px;
+}
+.highlight {
+  color: blue;
 }
 
 /* 게시물 토글 메뉴*/

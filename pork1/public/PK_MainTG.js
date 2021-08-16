@@ -31,10 +31,10 @@ $(this).click(function (e) {
 // 더보기
 
 $(function () {
-  $(".main_contents").slice(0, 10).show();
+  $(".main_contents").slice(0, 4).show();
   $(".more").click(function (e) {
     e.preventDefault();
-    $(".main_contents:hidden").slice(0, 5).slideDown();
+    $(".main_contents:hidden").slice(0, 4).slideDown();
     if ($(".main_contents:hidden").length == 0) {
       $(".more").fadeOut("slow");
     }
